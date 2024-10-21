@@ -1,0 +1,13 @@
+[Unit]
+Description=ElastricSearch heartbeats
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+ExecStart=/home/rino17f/zium/heartbeat-7.15.2-linux-x86_64/heartbeat -c /home/rino17f/zium/heartbeat-7.15.2-linux-x86_64/heartbeat.yml
+RestartSec=3
+
+User=rino17f
+
+[Install]
+WantedBy=multi-user.target

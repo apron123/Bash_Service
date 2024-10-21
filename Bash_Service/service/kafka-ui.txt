@@ -1,0 +1,13 @@
+[Unit]
+Description=Kafka UI service
+Wants=network-online.target kafka.service
+After=network-online.target kafka.service
+
+[Service]
+ExecStart=/usr/lib/jvm/jdk-17.0.2/bin/java -Dspring.config.additional-location=/home/rino17f/zium/kafka/kafka-ui/application.yml -jar /home/rino17f/zium/kafka/kafka-ui/kafka-ui-api-v0.7.2.jar
+RestartSec=3
+
+User=rino17f
+
+[Install]
+WantedBy=multi-user.target

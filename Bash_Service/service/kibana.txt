@@ -1,0 +1,19 @@
+[Unit]
+Description=Elasticsearch Kibana 17F
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+ExecStart=/home/rino17f/zium/kibana-7.15.2-linux-x86_64/bin/kibana
+RestartSec=3
+
+User=rino17f
+
+[Install]
+WantedBy=multi-user.target
+~
+
+
+sudo systemctl start kibana.service -- 실행
+sudo systemctl stop kibana.service -- 중지
+sudo systemctl status kibana.service -- 중지

@@ -1,0 +1,14 @@
+visudo /usr/lib/systemd/system/???.service
+
+sudo systemctl start elasticsearch.service -- 실행
+sudo systemctl stop elasticsearch.service -- 중지
+sudo systemctl status elasticsearch.service -- 중지
+
+
+sudo systemctl start kibana.service -- 실행
+sudo systemctl stop kibana.service -- 중지
+sudo systemctl status kibana.service -- 중지
+
+systemctl enable ???.service - 해당 서비스 reboot 후 auto start
+systemctl daemon-reload - 서비스 변경 사항 생기면 수정반영
+

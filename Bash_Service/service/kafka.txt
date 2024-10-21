@@ -1,0 +1,14 @@
+[Unit]
+Description=Kafka1 service
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+ExecStart=/home/rino17f/zium/kafka/kafka_2.12-3.8.0/bin/kafka-server-start.sh /home/rino17f/zium/kafka/kafka_2.12-3.8.0/config/server.properties
+ExecStop=/home/rino17f/zium/kafka/kafka_2.12-3.8.0/bin/kafka-server-stop.sh
+RestartSec=3
+
+User=rino17f
+
+[Install]
+WantedBy=multi-user.target

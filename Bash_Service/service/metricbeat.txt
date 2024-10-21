@@ -1,0 +1,14 @@
+[Unit]
+Description=ElastricSearch metricbeats
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+ExecStart=/home/rino17f/zium/metricbeat-7.15.2-linux-x86_64/metricbeat -c /home/rino17f/zium/metricbeat-7.15.2-linux-x86_64/metricbeat.yml
+RestartSec=3
+
+User=rino17f
+
+[Install]
+WantedBy=multi-user.target
+~

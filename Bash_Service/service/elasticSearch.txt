@@ -1,0 +1,18 @@
+[Unit]
+Description=Elasticsearch1 service
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+RuntimeDirectory=elasticsearch-7.15.2
+WorkingDirectory=/home/rino17f/zium/elasticsearch-7.15.2
+
+LimitMEMLOCK=infinity
+LimitNOFILE=65535
+LimitNPROC=4096
+
+ExecStart=/home/rino17f/zium/elasticsearch-7.15.2/bin/elasticsearch
+ExecReload=/home/rino17f/zium/elasticsearch-7.15.2/bin/elasticsearch
+RestartSec=3
+
+User=rino17f
